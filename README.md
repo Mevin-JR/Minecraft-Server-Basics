@@ -50,3 +50,7 @@ There are a few things to do before you can host a server on your device locally
    * The server address/IP is in the "Forwarding" line, for example in this case the server IP is `0.tcp.in.ngrok.io:10956`
    * Share this IP (along with its port) to other users to let them join your server
    * I recommend turning server whitelist **on** when using ngrok
+
+### Setting up the Minecraft server
+
+Now lets get into setting up your actual Minecraft server.
