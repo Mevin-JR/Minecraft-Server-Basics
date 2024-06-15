@@ -39,7 +39,13 @@ There are a few things to do before you can host a server on your device locally
    * Type in the command `ngrok tcp 25565`
    * A new window with IP details will be displayed, it will look something like this:
    ```
-   Session Status                online                                                                                    Account                       username (Plan: Free)                                                               Update                        update available (version 3.11.0, Ctrl-U to update)                                       Version                       3.8.0                                                                                     Region                        your-region                                                                               Latency                       20ms                                                                                      Web Interface                 http://127.0.0.1:4040                                                                     Forwarding                    tcp://0.tcp.in.ngrok.io:10956 -> localhost:25565                                                                                 
+   Session Status             Online                    
+   Account                    username (Plan: Free)
+   Version                    3.11.0
+   Region                     your-region
+   Latency                    21ms
+   Web Interface              http://127.0.0.1:4040
+   Forwarding                 tcp://0.tcp.in.ngrok.io:10956 -> localhost:25565                 
    ```
    * The server address/IP is in the "Forwarding" line, for example in this case the server IP is `0.tcp.in.ngrok.io:10956`
    * Share this IP (along with its port) to other users to let them join your server
