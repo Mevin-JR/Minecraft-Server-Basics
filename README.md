@@ -53,4 +53,19 @@ There are a few things to do before you can host a server on your device locally
 
 ### Setting up the Minecraft server
 
-Now lets get into setting up your actual Minecraft server.
+Now lets get into setting up your actual Minecraft server. It is advised to store all files related to your server in **one single folder**. 
+The "Demo-Server" folder provided in this repo is a sample server set-up using `paper-1.20.6.jar` server software. You can use it to test run a Minecraft server.
+
+1. Downloading server jar
+
+   There are quite a few server jar's you can choose from, some of the most popular are:
+
+   * ![](https://github.com/Mevin-JR/Minecraft-Server-Basics/tree/main/markdown/images/spigot-icon.png "Spigot Icon") [Spigot](https://getbukkit.org/download/spigot) - Spigot is a fork of Minecraft server software, known for its efficiency and optimizations. It supports a wide range of plugins and a wide range of customizations.
+
+   * ![](https://github.com/Mevin-JR/Minecraft-Server-Basics/tree/main/markdown/images/papermc-icon.jpg "PaperMC Icon") [PaperMC](https://papermc.io/downloads) - PaperMC is a fork of Spigot that focuses on improving performance and fixing bugs. It is known for active development and support for a large number of plugins.
+
+   * ![](https://github.com/Mevin-JR/Minecraft-Server-Basics/tree/main/markdown/images/forge-icon.jpg "Forge Icon") [Forge](https://files.minecraftforge.net/net/minecraftforge/forge/) - Forge is a modding platform for Minecraft that allows for extensive modification of the game through mods. Unlike plugins, which are limited to server side changes, Forge mods can affect both client and server, enabling deep alterations to the game mechanics and content.
+
+   * ![](https://github.com/Mevin-JR/Minecraft-Server-Basics/tree/main/markdown/images/fabricmc.png "Fabric Icon") [Fabric](https://fabricmc.net/) - Fabric is a lightweight, experimental modding toolchain for Minecraft. It provides modular and flexible platform for mod developers, Fabric is known for its simplicity and ease of use.
+
+2. 
