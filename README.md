@@ -20,7 +20,7 @@ There are a few things to do before you can host a server on your device locally
    | 1.20 | [JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) |
    | 1.21 | [JDK 21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html) |
 
-   **_Note_:** _These JDK versions are a minimum requiredment for the respective Minecraft version. And JDK is only required to HOST a Minecraft server._
+   **_Note_:** _These JDK versions are a minimum requiredment for the respective Minecraft version. JDK is only required to HOST a Minecraft server._
 
 2. **Multiplayer Support**
 
@@ -74,7 +74,7 @@ The "Demo-Server" folder provided in this repo is a sample server set-up using `
    
    Open `eula.txt` and change the `eula=false` to `eula=true`, save and exit.
 
-3. Launching the server
+3. Setting up the server launcher
 
    Now we are ready to launch the Minecraft server.
 
@@ -87,6 +87,34 @@ The "Demo-Server" folder provided in this repo is a sample server set-up using `
 
    * `start cmd.exe /k "ngrok tcp 25565"` will create a new cmd window and run the command "ngrok tcp 25565". 
    
-      **Note:** This will only work if the `ngrok.exe` is placed inside the server folder (or the folder which contains the text file). You can exclude this line if you do not want to have an ngrok connection.
+      **_Note:_** _This will only work if the `ngrok.exe` is placed inside the server folder (or the folder which contains the text file). You can exclude this line if you do not want to have an ngrok connection._
 
-   * `java -Xmx4G -Xms4G -jar minecraft-server.jar nogui` will launch the Minecraft server. You can specify how much RAM will be taken up by the server, modify **-Xmx4G** and **-Xms4G** to increase or decrease the amount of RAM. **4G** represents the RAM (in this case 4 GB of RAM will be allocated to the server)
+   * `java -Xmx4G -Xms4G -jar minecraft-server.jar nogui` will launch the Minecraft server. You can specify how much RAM will be taken up by the server, modify **-Xmx4G** and **-Xms4G** to increase or decrease the amount of RAM. **4G** represents the amount of RAM allocated (in this case 4 GB of RAM will be allocated to the server).
+   
+      Change `minecraft-server.jar` to the name of the server jar in your server.
+   
+   After saving all changes inside the text document, rename it to `run.bat`. You must change the file extension from **.txt** to **.bat** (If you are not able to see the file extension, go to view settings of your server folder and enable 'File name extensions')
+
+4. Launching the server
+
+   Double-click the `run.bat` batch file.
+
+   Thats it! You just hosted your very own local Minecraft server!
+
+### Helpful Information
+
+* You can add plugins into the server by uploading the plugin jar file into the `plugins` folder generated inside the server folder.
+
+   Once the plugin is loaded into the server (upon server launch), most plugins will generate their respective config files in the plugins folder. You can use them to customize the plugin.
+
+* To generate a new world, stop the server and remove the 3 world files (`world`, `world_nether`, `world_the_end`). Start the server and new world files will be generated.
+
+* To allow cracked accounts to join (clients like TLauncher) set `online-mode` to `false` from **server.properties**.
+
+* I recommend checking out these resources for server optimization; 
+
+   https://github.com/YouHaveTrouble/minecraft-optimization
+   
+   https://www.spigotmc.org/threads/guide-server-optimization%E2%9A%A1.283181/
+
+Happy Mining !!
