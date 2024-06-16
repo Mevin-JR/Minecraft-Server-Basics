@@ -12,13 +12,13 @@ There are a few things to do before you can host a server on your device locally
 
    | Minecraft Version | JDK Version (minimum) |
    |:----:|:------:|
-   | 1.8  | JDK 8  |
-   | 1.12 | JDK 8  |
-   | 1.16 | JDK 8  |
-   | 1.17 | JDK 16 |
-   | 1.18 | JDK 17 |
-   | 1.20 | JDK 17 |
-   | 1.21 | JDK 21 |
+   | 1.8  | [JDK 8](https://www.oracle.com/in/java/technologies/javase/javase8-archive-downloads.html)  |
+   | 1.12 | [JDK 8](https://www.oracle.com/in/java/technologies/javase/javase8-archive-downloads.html)  |
+   | 1.16 | [JDK 8](https://www.oracle.com/in/java/technologies/javase/javase8-archive-downloads.html)  |
+   | 1.17 | [JDK 16](https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html) |
+   | 1.18 | [JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) |
+   | 1.20 | [JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) |
+   | 1.21 | [JDK 21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html) |
 
    **_Note_:** _These JDK versions are a minimum requiredment for the respective Minecraft version. And JDK is only required to HOST a Minecraft server._
 
@@ -29,7 +29,7 @@ There are a few things to do before you can host a server on your device locally
    For users who do not share the same network, using [ngrok](https://ngrok.com/) is the easiest way to allow users to connect. Here's how: 
    * Sign up or log in to [ngrok](https://ngrok.com/) (**Its free**)
    * Download the zip folder by following the instructions provided on your ngrok dashboard
-   * Extract the zip folder and run the `ngrok.exe` file, a cmd window will popup
+   * Extract the zip folder into the server folder and run the `ngrok.exe` file, a cmd window will popup
    * Copy your auth code from the dashboard (It looks something like this `ngrok config add-authtoken "your-auth-token"`)
    * Execute the auth command in the cmd
    * If your ngrok account is authenticated successfully, you have done everything right
@@ -60,12 +60,33 @@ The "Demo-Server" folder provided in this repo is a sample server set-up using `
 
    There are quite a few server jar's you can choose from, some of the most popular are:
 
-   * ![](https://github.com/Mevin-JR/Minecraft-Server-Basics/tree/main/markdown/images/spigot-icon.png "Spigot Icon") [Spigot](https://getbukkit.org/download/spigot) - Spigot is a fork of Minecraft server software, known for its efficiency and optimizations. It supports a wide range of plugins and a wide range of customizations.
+   * ![](markdown/images/spigot-icon-16x11.png "Spigot Icon") [Spigot](https://getbukkit.org/download/spigot) - Spigot is a fork of Minecraft server software, known for its efficiency and optimizations. It supports a wide range of plugins and a wide range of customizations.
 
-   * ![](https://github.com/Mevin-JR/Minecraft-Server-Basics/tree/main/markdown/images/papermc-icon.jpg "PaperMC Icon") [PaperMC](https://papermc.io/downloads) - PaperMC is a fork of Spigot that focuses on improving performance and fixing bugs. It is known for active development and support for a large number of plugins.
+   * ![](markdown/images/papermc-icon-16x16.jpg "PaperMC Icon") [PaperMC](https://papermc.io/downloads) - PaperMC is a fork of Spigot that focuses on improving performance and fixing bugs. It is known for active development and support for a large number of plugins.
 
-   * ![](https://github.com/Mevin-JR/Minecraft-Server-Basics/tree/main/markdown/images/forge-icon.jpg "Forge Icon") [Forge](https://files.minecraftforge.net/net/minecraftforge/forge/) - Forge is a modding platform for Minecraft that allows for extensive modification of the game through mods. Unlike plugins, which are limited to server side changes, Forge mods can affect both client and server, enabling deep alterations to the game mechanics and content.
+   * ![](markdown/images/forge-icon-16x16.jpg "Forge Icon") [Forge](https://files.minecraftforge.net/net/minecraftforge/forge/) - Forge is a modding platform for Minecraft that allows for extensive modification of the game through mods. Unlike plugins, which are limited to server side changes, Forge mods can affect both client and server, enabling deep alterations to the game mechanics and content.
 
-   * ![](https://github.com/Mevin-JR/Minecraft-Server-Basics/tree/main/markdown/images/fabricmc.png "Fabric Icon") [Fabric](https://fabricmc.net/) - Fabric is a lightweight, experimental modding toolchain for Minecraft. It provides modular and flexible platform for mod developers, Fabric is known for its simplicity and ease of use.
+   * ![](markdown/images/fabricmc-icon-16x16.png "Fabric Icon") [Fabric](https://fabricmc.net/) - Fabric is a lightweight, experimental modding toolchain for Minecraft. It provides modular and flexible platform for mod developers, Fabric is known for its simplicity and ease of use.
 
-2. 
+2. EULA Agreement
+
+   After downloading the server jar, double-click on the jar file to run it. A few files and folders will appear, one of the file is `eula.txt`. You must agree to Minecrafts [EULA](https://aka.ms/MinecraftEULA) terms to run your server. 
+   
+   Open `eula.txt` and change the `eula=false` to `eula=true`, save and exit.
+
+3. Launching the server
+
+   Now we are ready to launch the Minecraft server.
+
+   Right-click inside the server folder and create a new text document. Copy the below lines into the file:
+   ```
+   start cmd.exe /k "ngrok tcp 25565"
+   java -Xmx4G -Xms4G -jar minecraft-server.jar nogui
+   ```
+   This will run both the server and the ngrok connection at the same time.
+
+   * `start cmd.exe /k "ngrok tcp 25565"` will create a new cmd window and run the command "ngrok tcp 25565". 
+   
+      **Note:** This will only work if the `ngrok.exe` is placed inside the server folder (or the folder which contains the text file). You can exclude this line if you do not want to have an ngrok connection.
+
+   * `java -Xmx4G -Xms4G -jar minecraft-server.jar nogui` will launch the Minecraft server. You can specify how much RAM will be taken up by the server, modify **-Xmx4G** and **-Xms4G** to increase or decrease the amount of RAM. **4G** represents the RAM (in this case 4 GB of RAM will be allocated to the server)
