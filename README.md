@@ -20,7 +20,7 @@ There are a few things to do before you can host a server on your device locally
    | 1.20 | [JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) |
    | 1.21 | [JDK 21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html) |
 
-   **_Note_:** _These JDK versions are a minimum requiredment for the respective Minecraft version. JDK is only required to HOST a Minecraft server._
+   **_Note_:** _These JDK versions are a minimum requirement for the respective Minecraft version. JDK is only required to HOST a Minecraft server._
 
 2. **Multiplayer Support**
 
